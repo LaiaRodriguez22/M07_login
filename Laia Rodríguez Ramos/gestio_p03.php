@@ -7,16 +7,20 @@
 </head>
 <body>
     <?php
+        //CONSTANTS DE LA CONNEXIÓ A LA BBDD
+        define("DB_HOST", "localhost");
+        define("DB_NAME", "users");
+        define("DB_USER", "root");
+        define("DB_PSW", '');
+        //NO DEFFENEIXO EL PORT.
 
-        //VARIABLES NECESSARIES DE POST AMB EL FORMULARI
-        $id = $_POST["id"];
-        $nomUser = $_POST["nom"];
-        $cognomUser = $_POST["cognom"];
-        $password = $_POST["password"];
-        $email = $_POST["email"];
-
-        echo "hola " .$nomUser;
-    
+        $connect = mysqli_connect(DB_HOST, DB_NAME, DB_USER, DB_PSW);
+        if(!$connect){
+            echo "Error!!!! ".mysqli_connect_error();
+        }else{
+            $query = "SELECT * FROM userlaia";
+            $productes = mysqli_query($connect, $query);
+        }
     ?>
 </body>
 </html>
