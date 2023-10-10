@@ -11,14 +11,15 @@
         define("DB_HOST", "localhost");
         define("DB_NAME", "users");
         define("DB_USER", "root");
-        define("DB_PSW", '');
+        define("DB_PSW", "");
         //NO DEFFENEIXO EL PORT.
 
-        $connect = mysqli_connect(DB_HOST, DB_NAME, DB_USER, DB_PSW);
+        //CONNEXIO 
+        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
         if(!$connect){
-            echo "Error!!!! ".mysqli_connect_error();
+             echo "Error!!!! ".mysqli_connect_error();
         }else{
-            $query = "SELECT * FROM userlaia";
+             $query = "SELECT * FROM userlaia";
             $productes = mysqli_query($connect, $query);
         }
     ?>
