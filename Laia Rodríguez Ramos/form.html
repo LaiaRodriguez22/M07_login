@@ -6,12 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/gestio_p03.php">
-        <label for="fname">Nom:</label><br>
-        <input type="text" id="fname" name="fname" value="Laia"><br>
-        <label for="lname">Password:</label><br>
-        <input type="text" id="lname" name="lname" value="Rodríguez"><br><br>
-        <input type="submit" value="Submit">
-      </form> 
+    <form action="gestio_p03.php" method="post">
+        <!--ID-->
+        <label for="id"> Indica el teu id </label>
+        <input type="text" id="id">
+        <br>
+        <!--NOM-->
+        <label for="nom"> Indica el teu nom </label>
+        <input type="text" id="nom">
+        <br>
+        <!--COGNOM-->
+        <label for="cognom"> Indica el teu cognom </label>
+        <input type="text" id="cognom">
+        <br>
+        <!--PASSWORD-->
+        <label for="password"> Indica el teu password </label>
+        <input type="text" id="password">
+        <br>
+        <!--EMAIL-->
+        <label for="email"> Indica el teu email </label>
+        <input type="text" id="email">
+        <br>
+        <input type="submit" value="Enviar">   
+    </form>
 </body>
 </html>
