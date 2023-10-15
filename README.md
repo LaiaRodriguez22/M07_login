@@ -27,4 +27,11 @@ Actualment doncs, només es deixa a l'usuari que afegeixi:
 * [EMAIL]
 <img src="https://i.imgur.com/KX8JoeI.png">
 
+## GESTIÓ
+
+
+## RESULTAT FINAL
+
+
+## PROCÉS COMPLET
 
