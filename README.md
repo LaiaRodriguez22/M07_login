@@ -29,8 +29,12 @@ Actualment doncs, només es deixa a l'usuari que afegeixi:
 
 ## GESTIÓ
 
+<img src="https://i.imgur.com/kFrq7Ac.png">
+<img src="https://i.imgur.com/uMIpIoE.png">
 
 ## RESULTAT FINAL
+
+<img src="https://i.imgur.com/uBr3pX8.png">
 
 
 ## PROCÉS COMPLET
