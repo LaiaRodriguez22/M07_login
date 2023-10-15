@@ -14,13 +14,31 @@
         define("DB_PSW", "");
         //NO DEFFENEIXO EL PORT.
 
-        //CONNEXIO 
+        //CCONNEXIO
         $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
+        //COMPROVA SI CONNEXIO ES CORRECTE 
         if(!$connect){
              echo "Error!!!! ".mysqli_connect_error();
         }else{
-             $query = "SELECT * FROM userlaia";
+            //SELECT PER RETORNAR ELS PRODUCTES DE LA TAULA
+            $query = "SELECT * FROM userlaia";
             $productes = mysqli_query($connect, $query);
+        }
+
+        if(!$productes){
+            echo "Error en la consulta";
+        }
+        else{
+            foreach($productes as $i => $userlaia){
+                echo "ID PRODUCTE: " . $userlaia[user_id];
+                echo "<br>";
+                echo "NOM PRODUCTE: " . $userlai[username];
+                echo "<br>";
+                
+                echo "<br>";
+
+                echo "<br><br>";
+            }
         }
     ?>
 </body>
