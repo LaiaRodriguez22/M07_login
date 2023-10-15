@@ -1,7 +1,7 @@
 # M07_login_LRR
 
 S'ha creat la BBDD pertinent amb la taula de nom: **userlaia**. 
-<br>
+<br><br>
 Els camps són els indicats: 
 * [ID]
 * [NAME]
