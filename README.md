@@ -25,6 +25,8 @@ Actualment doncs, només es deixa a l'usuari que afegeixi:
 * [SURNAME]
 * [PASSWORD]
 * [EMAIL]
+
+<img src="https://i.imgur.com/tmGKEfU.png">
 <img src="https://i.imgur.com/KX8JoeI.png">
 
 ## GESTIÓ
