@@ -25,21 +25,16 @@
             $productes = mysqli_query($connect, $query);
         }
 
-        if(!$productes){
-            echo "Error en la consulta";
-        }
-        else{
-            foreach($productes as $i => $userlaia){
-                echo "ID PRODUCTE: " . $userlaia[user_id];
-                echo "<br>";
-                echo "NOM PRODUCTE: " . $userlai[username];
-                echo "<br>";
-                
-                echo "<br>";
+        //JO PER MI QUE AIXO VA A L'ALTRE DOCUMENT, INFO_P03.PHP
+        //VARIABLES NECESSARIES DE POST AMB EL FORMULARI
+        $id = $_POST["id"];
+        $nomUser = $_POST["nom"];
+        $cognomUser = $_POST["cognom"];
+        $password = $_POST["password"];
+        $email = $_POST["email"];
 
-                echo "<br><br>";
-            }
-        }
+        echo $id . $nomUser . $cognomUser . $password . $email;   
+        //mysqli_close($connect);
     ?>
 </body>
 </html>

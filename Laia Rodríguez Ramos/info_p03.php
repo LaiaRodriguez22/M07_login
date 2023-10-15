@@ -7,15 +7,8 @@
 </head>
 <body>
     <?php
-        //VARIABLES NECESSARIES DE POST AMB EL FORMULARI
-        
-        $id = $_POST["id"];
-        $nomUser = $_POST["nom"];
-        $cognomUser = $_POST["cognom"];
-        $password = $_POST["password"];
-        $email = $_POST["email"];
 
-        echo "hola " .$nomUser;
+        mysqli_close($connect);
     ?>
 </body>
 </html>
