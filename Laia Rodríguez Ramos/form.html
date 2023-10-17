@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Iniciar sessió de l'usuari</h2>
+    <form action="gestio_p03.php" method="post">
+        <!--ID-->
+        <label for="id"> Indica el teu id</label>
+        <input type="text" name="id">
+        <br>
+        <!--NOM-->
+        <label for="nom"> Indica el teu nom</label>
+        <input type="text" name="nom">
+        <br>
+        <!--COGNOM-->
+        <label for="cognom"> Indica el teu cognom </label>
+        <input type="text" name="cognom">
+        <br>
+        <!--PASSWORD-->
+        <label for="password"> Indica el teu password</label>
+        <input type="text" name="password">
+        <br>
+        <!--EMAIL-->
+        <label for="email"> Indica el teu email </label>
+        <input type="text" name="email">
+        <br>
+
+        <!--ROL-->
+        <label for="rol"> Ets professor o alumne? </label>
+        <select name="rol">
+            <option value="Professor">Professor</option>
+            <option value="Alumne">Alumne</option>
+        </select>
+        <br>
+
+        <!--ACTIU-->
+        <label for="actiu"> Actiu? </label>
+        <input type="checkbox" name="actiu">
+        <br>
+
+        <input type="submit" value="Enviar">   
+    </form>
+    <a href="logUser.html">Inicia sessió</a>
+</body>
+</html>
