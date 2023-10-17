@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Iniciar sessió de l'usuari</h2>
     <form action="gestio_p03.php" method="post">
         <!--NOM-->
         <label for="nom"> Indica el teu nom</label>
@@ -23,7 +24,14 @@
         <label for="email"> Indica el teu email </label>
         <input type="text" name="email">
         <br>
+
+        <!--ROL-->
+        <label for="rol"> Ets professor o alumne? </label>
+        <input type="text" name="rol">
+        <br>
+
         <input type="submit" value="Enviar">   
     </form>
+    <a href="logUser.html">Inicia sessió</a>
 </body>
 </html>

@@ -7,5 +7,6 @@
 </head>
 <body>
     <p>S'ha guardat l'usuari correctament.</p>
+    <a href="logUser.html">Inicia sessió</a>
 </body>
 </html>
