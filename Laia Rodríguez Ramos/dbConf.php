@@ -23,16 +23,7 @@
         //NO DEFFENEIXO EL PORT.
 
         $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
-        $query = "INSERT INTO userlaia (username, surname, password, email) VALUES ('$nomUser', '$cognomUser', '$password', '$email')";
-            
-        //COMPROVA SI CONNEXIO ES CORRECTE 
-        if(!$connect){
-            echo "Error!!!! ".mysqli_connect_error();
-        }else{
-            //AQUI TRY, CATCH AND FINALLY
-        }
-        // TANCA CONNEXIO
-        mysqli_close($connect);
+        
     ?>
 </body>
 </html>
