@@ -9,11 +9,13 @@
     <?php
         // VALORS PER EL FORMULARI
         //AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL. 
-        //$id = $_POST["id"]; 
+        $id = $_POST["id"]; 
         $nomUser = $_POST["nom"];
         $cognomUser = $_POST["cognom"];
         $password = $_POST["password"];
         $email = $_POST["email"];
+        $rol = $_POST["rol"];
+        $actiu = true;
 
         //CONSTANTS DE LA CONNEXIÓ A LA BBDD
         define("DB_HOST", "localhost");
@@ -23,7 +25,7 @@
         //NO DEFFENEIXO EL PORT.
 
         $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
-        $query = "INSERT INTO userlaia (username, surname, password, email) VALUES ('$nomUser', '$cognomUser', '$password', '$email')";
+        $query = "INSERT INTO userlaia (user_id, username, surname, password, email, rol, active) VALUES ('$id', '$nomUser', '$cognomUser', '$password', '$email', '$rol', '$actiu')";
             
         //COMPROVA SI CONNEXIO ES CORRECTE 
         if(!$connect){
