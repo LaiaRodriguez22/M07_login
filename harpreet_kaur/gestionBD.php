@@ -38,7 +38,7 @@
     } else {
         //consultes
         $query = "INSERT INTO user(user_id, name, surname, password, email, rol, active) 
-        VALUES ('$id', '$nombre', '$apellido', '$password', '$correo', alumnat , '$active')";
+        VALUES ('$id', '$nombre', '$apellido', '$password', '$correo', alumna , '$active')";
         $conexionBD = mysqli_query($connect, $query);
     }
 
