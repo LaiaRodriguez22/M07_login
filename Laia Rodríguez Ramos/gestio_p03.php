@@ -17,11 +17,11 @@
         $rol = $_POST["rol"];
 
         // 0 -> CHECKBOX PREDETERMINAT.
-        $active = 0; // Establecer un valor predeterminado de 0
+        $active = 0; 
 
-        // Comprobar si el checkbox "actiu" está marcado en el formulario
+        //AQUI COMPROVA SI EL CHECKBOX ESTÁ ACTIU. 
         if (isset($_POST["actiu"])) {
-            $active = 1; // Checkbox marcado, establecer el valor en 1
+            $active = 1; 
         }
 
         // CONSTANTS DE LA CONNEXIÓ A LA BBDD
