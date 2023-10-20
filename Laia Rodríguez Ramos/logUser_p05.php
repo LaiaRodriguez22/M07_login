@@ -19,7 +19,6 @@
         */
 
         // VALORS PER EL FORMULARI
-        // AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL.
         $password = $_POST["password"];
         $email = $_POST["email"];
 
