@@ -12,9 +12,7 @@
         define("DB_NAME", "users");
         define("DB_USER", "root");
         define("DB_PSW", "");
-        //NO DEFFENEIXO EL PORT.
-
-        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
+        //NO DEFFENEIXO EL PORT
         
     ?>
 </body>

@@ -14,10 +14,9 @@
         define("DB_HOST", "localhost");
         define("DB_NAME", "users");
         define("DB_USER", "root");
-        define("DB_PSW", "");
-        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
-        */
+        define("DB_PSW", "");*/
 
+        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
 
         // VALORS PER EL FORMULARI
         // AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL.
