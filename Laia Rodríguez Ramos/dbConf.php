@@ -7,14 +7,6 @@
 </head>
 <body>
     <?php
-        // VALORS PER EL FORMULARI
-        //AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL. 
-        //$id = $_POST["id"]; 
-        $nomUser = $_POST["nom"];
-        $cognomUser = $_POST["cognom"];
-        $password = $_POST["password"];
-        $email = $_POST["email"];
-
         //CONSTANTS DE LA CONNEXIÓ A LA BBDD
         define("DB_HOST", "localhost");
         define("DB_NAME", "users");

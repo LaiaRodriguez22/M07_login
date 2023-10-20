@@ -7,7 +7,10 @@
 </head>
 <body>
     <?php
-       
+       include "dbConf.php";
+
+       //VALOR FORMULARI
+       $idProd = $_POST["email"];
     ?>
 </body>
 </html>

@@ -8,25 +8,33 @@
 <body>
     <?php
         // VALORS PER EL FORMULARI
-        //AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL. 
-        $id = $_POST["id"]; 
+        // AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL.
+        $id = $_POST["id"];
         $nomUser = $_POST["nom"];
         $cognomUser = $_POST["cognom"];
         $password = $_POST["password"];
         $email = $_POST["email"];
         $rol = $_POST["rol"];
-        $actiu = true;
 
-        //CONSTANTS DE LA CONNEXIÓ A LA BBDD
+        // 0 -> CHECKBOX PREDETERMINAT.
+        $active = 0; // Establecer un valor predeterminado de 0
+
+        // Comprobar si el checkbox "actiu" está marcado en el formulario
+        if (isset($_POST["actiu"])) {
+            $active = 1; // Checkbox marcado, establecer el valor en 1
+        }
+
+        // CONSTANTS DE LA CONNEXIÓ A LA BBDD
         define("DB_HOST", "localhost");
         define("DB_NAME", "users");
         define("DB_USER", "root");
         define("DB_PSW", "");
-        //NO DEFFENEIXO EL PORT.
+        // NO DEFFENEIXO EL PORT.
 
-        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
-        $query = "INSERT INTO userlaia (user_id, username, surname, password, email, rol, active) VALUES ('$id', '$nomUser', '$cognomUser', '$password', '$email', '$rol', '$actiu')";
-            
+        $connect = mysqli_connect(DB_HOST, DB_USER, DB_PSW, DB_NAME);
+
+        $query = "INSERT INTO userlaia (user_id, username, surname, password, email, rol, active) VALUES ('$id', '$nomUser', '$cognomUser', '$password', '$email', '$rol', '$active')";
+
         //COMPROVA SI CONNEXIO ES CORRECTE 
         if(!$connect){
             echo "Error!!!! ".mysqli_connect_error();
