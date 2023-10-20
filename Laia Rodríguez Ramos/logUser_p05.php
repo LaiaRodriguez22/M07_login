@@ -7,10 +7,26 @@
 </head>
 <body>
     <?php
-       include "dbConf.php";
+        
+        include "dbConf.php";
 
-       //VALOR FORMULARI
-       $idProd = $_POST["email"];
+        /*
+        define("DB_HOST", "localhost");
+        define("DB_NAME", "users");
+        define("DB_USER", "root");
+        define("DB_PSW", "");
+        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
+        */
+
+        // VALORS PER EL FORMULARI
+        // AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL.
+        $password = $_POST["password"];
+        $email = $_POST["email"];
+
+        $query = "INSERT INTO userlaia ( password, email) VALUES ('$password', '$email')";
+
+        
+
     ?>
 </body>
 </html>

@@ -7,6 +7,18 @@
 </head>
 <body>
     <?php
+
+        include "dbConf.php";
+
+        /*
+        define("DB_HOST", "localhost");
+        define("DB_NAME", "users");
+        define("DB_USER", "root");
+        define("DB_PSW", "");
+        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
+        */
+
+
         // VALORS PER EL FORMULARI
         // AQUEST POST A L'ID NO TÉ SENTIT AL SER AUTOINCREMENTAL.
         $id = $_POST["id"];
@@ -23,15 +35,6 @@
         if (isset($_POST["actiu"])) {
             $active = 1; 
         }
-
-        // CONSTANTS DE LA CONNEXIÓ A LA BBDD
-        define("DB_HOST", "localhost");
-        define("DB_NAME", "users");
-        define("DB_USER", "root");
-        define("DB_PSW", "");
-        // NO DEFFENEIXO EL PORT.
-
-        $connect = mysqli_connect(DB_HOST, DB_USER, DB_PSW, DB_NAME);
 
         $query = "INSERT INTO userlaia (user_id, username, surname, password, email, rol, active) VALUES ('$id', '$nomUser', '$cognomUser', '$password', '$email', '$rol', '$active')";
 
