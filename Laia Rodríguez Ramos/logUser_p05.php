@@ -53,7 +53,6 @@
         finally{
             mysqli_close($connect);
         }
-        
     ?>
 </body>
 </html>
