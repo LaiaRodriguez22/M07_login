@@ -23,19 +23,26 @@
         $password = $_POST["password"];
         $email = $_POST["email"];
 
-        $role1 = 'Professor';
+        //AIXO HAURIA DE SER TOT UN. 
+        $role1 = 'Professor'; 
         $role2 = 'Alumne';
-
-        $result = mysqli_query($connect, $query);
 
         //try catch i finally
         try {
             if($connect){
-                $query = "SELECT FROM userlaia ( password, email) VALUES ('$password', '$email')";
 
                 if(isset($_POST["email"]) && isset($_POST["password"])){
-                    
+                    $query = "SELECT FROM userlaia ( password, email, role) VALUES ('$password', '$email', '$role1')";
+
+                    echo "Bon dia " .$email; 
+                    echo "Bon dia " .$password;
+                    echo "Bon dia " .$role1;  
+
+                    //AIXO ESTA PERFE I ARA NECESSITO QUE AQUI, TAMBÉ COMPROVI SI ES ALUMNE O PROFE. 
+
                 } else echo "Els valors son incorrectes.";
+
+
 
             }
             else echo "Els valors IDK.";
