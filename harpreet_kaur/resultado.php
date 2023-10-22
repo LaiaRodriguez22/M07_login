@@ -1,5 +1,5 @@
+<!-- el fitxer gestionBD redireccionar a l'usuari a aquest fitxer si s'ha pogut fer tots els
+passos correctament, per a que l'usuari pugui iniciar la sessió -->
 
-<p>S’ha guardat l’usuari correctament</p>
-
-
-<p> YES!!!!!1</p>
+<p>La inserció és correcte</p>
+<a href="loginForm.html"> Iniciar sessió usuari</a>

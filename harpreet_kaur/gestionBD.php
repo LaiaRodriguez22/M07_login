@@ -14,19 +14,20 @@
     $apellido = $_POST['cognom'];
     $password = $_POST['password'];
     $correo = $_POST['email'];
-    $active = true;
+    $active = $_POST['actiu'];
+    $rol = $_POST['rol'];
+    if($active == "on"){
+        $active = true;
+    }else{
+        $active = false;
+    }
 
     echo $id . " " .  $nombre . " " . $apellido . " " . $password . " " . $correo;
     ?>
 
     <?php
-    //constants de la conexió de BD
-    define("DB_HOST", "localhost");
-    define("DB_NAME", "users");
-    define("DB_USER", "root");
-    define("DB_PSW", "");
-    define("DB_PORT", 3306);
-    $conexionBD = null;  //es important inicialitzar la varibale, en cas contrari donà error. 
+
+    include "dbConfig.php";
 
 
     //Connectar a la base de dades, ha d'estar en aquest ordere.
@@ -38,7 +39,7 @@
     } else {
         //consultes
         $query = "INSERT INTO user(user_id, name, surname, password, email, rol, active) 
-        VALUES ('$id', '$nombre', '$apellido', '$password', '$correo', alumna , '$active')";
+        VALUES ('$id', '$nombre', '$apellido', '$password', '$correo', '$rol' , '$active')";
         $conexionBD = mysqli_query($connect, $query);
     }
 

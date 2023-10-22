@@ -9,6 +9,7 @@
     <!-- El formulari per demanar les dades a l'usuari.
          l'etiqueta action i method s'utilitza per enviar les a dades al fitxer gestionDB a través del POST"
     -->
+    <h1> Crea un usuari </h1>
     <form action="gestionBD.php" method="post">
         <label for = "id"> Indica el teu id </label>
         <input type="text" name="id">
@@ -25,8 +26,18 @@
         <label for = "email"> Indica el teu email </label>
         <input type="text" name="email">
         <br>
+        <label for="rol"> Rol </label>
+        <select name="rol">
+            <option value="Professorat">Professor</option>
+            <option value="Alumnat">Alumne</option>
+        </select>
+        <br>
+        <label for="actiu"> Actiu? </label>
+        <input type="checkbox" name="actiu">
+        <br>            
         <input type="submit" value="Enviar">   
-    </form>  
+    </form> 
+    <a href="loginForm.html"> Iniciar sessió usuari </a>
     
 </body>
 </html>
