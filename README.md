@@ -14,9 +14,25 @@ Els camps són els indicats:
 * [ACTIVE]
 <br>
 <img src="https://i.imgur.com/ITzvFk2.png">
-<img src="https://i.imgur.com/vPmXqob.png">
+<img src="https://i.imgur.com/BqppIk0.png">
+<img src="https://i.imgur.com/FyyU7Ot.png">
 
-## FORMULARI
+## FORMULARI REGISTRE
+<img src="https://i.imgur.com/n8J4aQx.png">
+<img src="https://i.imgur.com/K3bUAou.png">
 
-<img src="https://i.imgur.com/LhtqXDj.png">
+## FORMULARI INICI DE SESSIÓ
+<img src="https://i.imgur.com/Dg8hL62.png">
+<img src="https://i.imgur.com/wf3SSFO.png">
+
+## USUARI INEXISTENT
+<img src="https://i.imgur.com/B8EkREe.png">
+<img src="https://i.imgur.com/FAwaa5B.png">
+
+## ENTRADA COM ALUMNE
+<img src="https://i.imgur.com/OG4RlKu.png">
+
+## ENTRADA COM A PROFESSOR
+<img src="https://i.imgur.com/kMRLZl4.png">
+
 
