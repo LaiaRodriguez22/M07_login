@@ -10,47 +10,72 @@
         
         include "dbConf.php";
 
-        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
-
-        /*
-        define("DB_HOST", "localhost");
-        define("DB_NAME", "users");
-        define("DB_USER", "root");
-        define("DB_PSW", "");
-        */
-
         // VALORS PER EL FORMULARI LOGIN
         $password = $_POST["password"];
         $email = $_POST["email"];
 
-        //AIXO HAURIA DE SER TOT UN. 
-        $role1 = 'Professor'; 
-        $role2 = 'Alumne';
+        $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
 
         //try catch i finally
         try {
-            if($connect){
+            $query = "SELECT email, password, rol, username, surname FROM userlaia WHERE email = '$email' AND password = '$password'";
+            $result = mysqli_query($connect, $query);
+        
+            //SI HI HA UN USUARI COM A MINIM REGISTRAT, ENTRA.
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
 
-                if(isset($_POST["email"]) && isset($_POST["password"])){
-                    $query = "SELECT FROM userlaia ( password, email, role) VALUES ('$password', '$email', '$role1')";
+                $rol = $row['rol'];
+                $username = $row['username'];
+                $surname = $row['surname'];
+                
+                //SI ES ALUMNE
+                if ($rol === 'Alumne') {
+                    echo "Benvingut com a alumne, " . $username . " <br>";
+                    echo "Nom: $username <br>";
+                    echo "Cognom: $surname <br>";
+                    echo "Correu: $email <br>";
+                } 
+                //SI ES PROFESSOR
+                elseif ($rol === 'Professor') {
+                    echo "Benvingut com a professor, " . $username;
+                    $query = "SELECT username, surname FROM userlaia";
+                    $result = mysqli_query($connect, $query);
+        
+                    echo "<h2>Llista d'usuaris:</h2>";
 
-                    echo "Bon dia " .$email; 
-                    echo "Bon dia " .$password;
-                    echo "Bon dia " .$role1;  
-
-                    //AIXO ESTA PERFE I ARA NECESSITO QUE AQUI, TAMBÉ COMPROVI SI ES ALUMNE O PROFE. 
-
-                } else echo "Els valors son incorrectes.";
-
-
-
+                    //UN ALTRE COP, SI HI HA UN USUARI COM A MINIM, GUARDA AL ARRAY
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        $usuaris = array();
+                        
+                        //RECORRER LA BBDD USERSLAIA
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $usuaris[] = $row;
+                        }
+                        
+                        //GUARDA NOM, COGNOM A L'ARRAY PER LLAVORS IMPRIMIR-HO
+                        foreach ($usuaris as $usuari) {
+                            $username = $usuari['username'];
+                            $surname = $usuari['surname'];
+                            echo "Nom i cognom: $username $surname <br>";
+                        }
+                    }
+                }
+                //SI NO ES RES DE RES!!
+                else{
+                    include "logUser.html";
+                    echo "No estas registrat? Regista't ara!";
+                }
+            } else {
+                include "logUser.html";
+                echo "Les dades d'inici de sessió són incorrectes.";
             }
-            else echo "Els valors IDK.";
-        }
+        } 
         catch (Exception $e) {
-            echo "No m'he pogut conectar a la base de dades. "  .$e->getMessage();
-        }
-        finally{
+            include "logUser.html";
+            echo "No m'he pogut conectar a la base de dades. " . $e->getMessage();
+        } 
+        finally {
             mysqli_close($connect);
         }
     ?>
