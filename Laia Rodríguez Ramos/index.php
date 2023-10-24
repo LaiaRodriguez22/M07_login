@@ -1,7 +1,3 @@
-    <?php
-    // Start the session
-    session_start();
-    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +8,7 @@
 <body>
     <?php
         include "validacioSessions.php";
-        echo "<br> Hola" . $_SESSION["correu"] . "<br>";
 
-        //PROVA.
-                
         session_unset();
         session_destroy(); 
     ?>

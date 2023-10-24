@@ -22,11 +22,11 @@ session_start();
 
         if(isset($_SESSION["isLogged"])){
             print_r($_SESSION["name"]); 
-            session_unset();
-            session_destroy(); 
         } else{
             include "logUser.html";
-            "echo <br> No he fet cap login <br>";
+            echo "<br> No he fet cap login <br>";
+            session_unset();
+            session_destroy(); 
         }
     ?>
 </body>
