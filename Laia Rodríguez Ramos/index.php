@@ -10,7 +10,7 @@
 
         session_start();
 
-        echo ". El teu nom és " . $_SESSION["username"];
+        echo " El teu nom és " . $_SESSION["username"];
 
         if (isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] === true) {
             //SI ES ALUMNE
@@ -19,10 +19,11 @@
                 echo "Benvingut com a alumne, " . $_SESSION["username"] . " <br>";
                 echo "Nom:" . $_SESSION["username"] . "<br>";
                 //AIXO PETA PERQUE JO NO TINC SESSIO DE SURNAME I EMAIL. HAIG DE FER EL GET.
-                //echo "Cognom: " .  $_SESSION["surname"] . "<br>";
+                $cognom = $_GET["surname"];
+                echo "Cognom: " .  $cognom . "<br>";
                 //echo "Correu: " . $_SESSION["email"] . "<br>";
             } 
-            //SI ES PROFESSOR
+            //SI ES PROFESSOR, SENSE FER. 
             elseif ($_SESSION['rol'] === 'Professor') {
                 echo "Benvingut com a professor, " . $username;
                 $query = "SELECT username, surname FROM userlaia";
@@ -50,6 +51,8 @@
                 }
             }
 
+            //NECESSARI PER BORRAR LES VARIABLES DE SESSIO I LA SESSIO EN SI. 
+            session_unset();
             session_destroy();
         }
     ?>
