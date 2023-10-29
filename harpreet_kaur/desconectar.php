@@ -14,7 +14,7 @@
     session_destroy();
 
     //redirrecionament
-    header('Location: loginFrom.html');
+    header('Location: loginForm.html');
 
     ?>
 </body>

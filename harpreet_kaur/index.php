@@ -30,8 +30,8 @@
             echo "Vayaaaa, error";
         }
     } else {
-        session_unset();
-        echo "Erorrrr";
+        include "loginForm.html";
+        echo "No entra en el bucle del if isLogged";
 
     } // if isLogged
 
