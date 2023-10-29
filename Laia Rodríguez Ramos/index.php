@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,31 +11,28 @@
 </head>
 <body>
     <?php
-
-        session_start();
-
-        echo " El teu nom és " . $_SESSION["username"];
-
         if (isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] === true) {
             //SI ES ALUMNE
             if ($_SESSION['rol'] === 'Alumne') {
 
-                echo "Benvingut com a alumne, " . $_SESSION["username"] . " <br>";
-                echo "Nom:" . $_SESSION["username"] . "<br>";
-                //AIXO PETA PERQUE JO NO TINC SESSIO DE SURNAME I EMAIL. HAIG DE FER EL GET.
-                $cognom = $_GET["surname"];
-                echo "Cognom: " .  $cognom . "<br>";
-                //echo "Correu: " . $_SESSION["email"] . "<br>";
+                echo "Benvingut, " . $_SESSION["username"] . " <br> Ets un:  " . $_SESSION["rol"];?>
+                <a href="logUser.html">Mostrar informació</a><br>
+                <a href="logUser.html">Desconnectar</a>
+                
+                <?php
+
             } 
-            //SI ES PROFESSOR, SENSE FER. 
+            //SI ES PROFESSOR
             elseif ($_SESSION['rol'] === 'Professor') {
-                echo "Benvingut com a professor, " . $username;
-                $query = "SELECT username, surname FROM userlaia";
+                echo "Benvingut, " . $_SESSION["username"] . " <br> Ets un:  " . $_SESSION["rol"];
+
+                $query = "SELECT username, surname, email FROM userlaia";
+
+                include "dbConf.php";
+                $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
                 $result = mysqli_query($connect, $query);
 
-                header('Location: index.php');
-
-                echo "<h2>Llista d'usuaris:</h2>";
+                echo "<h1>Llista d'usuaris:</h1>";
 
                 //UN ALTRE COP, SI HI HA UN USUARI COM A MINIM, GUARDA AL ARRAY
                 if ($result && mysqli_num_rows($result) > 0) {
@@ -46,14 +47,24 @@
                     foreach ($usuaris as $usuari) {
                         $username = $usuari['username'];
                         $surname = $usuari['surname'];
-                        echo "Nom i cognom: $username $surname <br>";
+                        $email = $usuari['email'];
+                        echo "Nom i cognom: $username $surname <br> Correu: $email <br><br>";
                     }
                 }
-            }
 
-            //NECESSARI PER BORRAR LES VARIABLES DE SESSIO I LA SESSIO EN SI. 
-            session_unset();
-            session_destroy();
+                ?>
+
+                <a href="logUser.html">Mostrar informació</a><br>
+                <a href="desconnectar.php">Desconnectar</a>
+                
+                <?php
+                session_unset();
+                session_destroy(); 
+                
+            }
+        }
+        else{
+            header('Location: logUser.html');
         }
     ?>
 </body>

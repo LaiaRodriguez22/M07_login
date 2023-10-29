@@ -34,12 +34,12 @@
                     $username = $row['username'];
                     $surname = $row['surname'];
                     
-
+                    //VARIABLES DE SESSIO    
                     $_SESSION["LoggedIn"] = true;
                     $_SESSION["user_id"] = $row['user_id']; 
                     $_SESSION["username"] = $username;
                     $_SESSION["rol"] = $rol;
-
+                    //ANEM A INDEX.PHP
                     header('Location: index.php');
                 } else {
                     include "logUser.html";
