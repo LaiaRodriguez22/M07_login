@@ -39,5 +39,6 @@ Els camps són els indicats:
 <img src="https://i.imgur.com/4nF10zL.png">
 <img src="https://i.imgur.com/bsie74J.png">
 <img src="https://i.imgur.com/vrcPIYu.png">
+<img src="https://i.imgur.com/esf9Rz4.png">
 
 
