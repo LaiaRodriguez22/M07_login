@@ -17,7 +17,7 @@ session_start();
         include "dbConf.php";
         $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
 
-        $query = "SELECT * FROM userlaia WHERE user_id = $user_id";
+        $query = "SELECT user_id, username, surname, email, rol, active  FROM userlaia WHERE user_id = $id";
 
         $result = mysqli_query($connect, $query);
     
@@ -38,7 +38,7 @@ session_start();
         <?php
     } else {
         echo "ID de l'usuari no proporcionat.";
-        //TORNEM A INDEX.PHP
+        //TORNEM AL LOGIN
         header('Location: logUser.html');
     }  
     ?>

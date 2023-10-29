@@ -17,7 +17,7 @@
 
                 echo "Benvingut, " . $_SESSION["username"] . " <br> Ets un:  " . $_SESSION["rol"];?>
                 <br>
-                <a href="mostrarInfo.php">Mostrar informacio</a><br>
+                <a href="mostrarInfo.php?id=<?php echo $_SESSION['user_id']; ?>">Mostrar informacio</a><br>
                 <a href="desconnectar.php">Desconnectar</a>
                 
                 <?php
@@ -55,7 +55,7 @@
 
                 ?>
                         <!--AQUI NECESSITO ALGO AIXI: ?user_id= echo $_GET['user_id'];-->
-                <a href="mostrarInfo.php">Mostrar informacio</a><br>
+                <a href="mostrarInfo.php?id=<?php echo $_SESSION['user_id']; ?>">Mostrar informacio</a><br>
                 <a href="desconnectar.php">Desconnectar</a>
                 
                 <?php
