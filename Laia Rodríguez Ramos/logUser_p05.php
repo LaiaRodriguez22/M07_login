@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +29,16 @@
                 if ($result && mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
 
+                    
                     $rol = $row['rol'];
                     $username = $row['username'];
                     $surname = $row['surname'];
                     
                     //SI ES ALUMNE
                     if ($rol === 'Alumne') {
+
+                        //SESSIONS?
+
                         echo "Benvingut com a alumne, " . $username . " <br>";
                         echo "Nom: $username <br>";
                         echo "Cognom: $surname <br>";

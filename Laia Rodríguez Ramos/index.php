@@ -8,7 +8,7 @@
 <body>
     <?php
         include "validacioSessions.php";
-
+        $nombreUsuario = $_SESSION["name"];  
         session_unset();
         session_destroy(); 
     ?>
