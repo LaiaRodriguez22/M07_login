@@ -35,13 +35,11 @@
                     $surname = $row['surname'];
                     
 
-                    $_SESSION['LoggedIn'] = true;
-                    $_SESSION['user_id'] = $row['user_id']; 
-                    $_SESSION['username'] = $username;
-                    $_SESSION['rol'] = $rol;
+                    $_SESSION["LoggedIn"] = true;
+                    $_SESSION["user_id"] = $row['user_id']; 
+                    $_SESSION["username"] = $username;
+                    $_SESSION["rol"] = $rol;
 
-                    // aqui ja no fem la comprovació de rol, sino que ho 
-                    //fem a index.php
                     header('Location: index.php');
                 } else {
                     include "logUser.html";
