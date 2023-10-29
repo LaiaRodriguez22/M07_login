@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 <body>
     <?php
@@ -16,8 +16,9 @@
             if ($_SESSION['rol'] === 'Alumne') {
 
                 echo "Benvingut, " . $_SESSION["username"] . " <br> Ets un:  " . $_SESSION["rol"];?>
-                <a href="logUser.html">Mostrar informació</a><br>
-                <a href="logUser.html">Desconnectar</a>
+                <br>
+                <a href="mostrarInfo.php">Mostrar informacio</a><br>
+                <a href="desconnectar.php">Desconnectar</a>
                 
                 <?php
 
@@ -53,14 +54,11 @@
                 }
 
                 ?>
-
-                <a href="logUser.html">Mostrar informació</a><br>
+                        <!--AQUI NECESSITO ALGO AIXI: ?user_id= echo $_GET['user_id'];-->
+                <a href="mostrarInfo.php">Mostrar informacio</a><br>
                 <a href="desconnectar.php">Desconnectar</a>
                 
                 <?php
-                session_unset();
-                session_destroy(); 
-                
             }
         }
         else{

@@ -1,6 +1,5 @@
 <?php
-// Start the session
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,11 +11,9 @@ session_start();
 </head>
 <body>
     <?php
-        
         session_unset();
         session_destroy(); 
         header('Location: logUser.html');
-        
     ?>
 </body>
 </html>
