@@ -29,10 +29,15 @@ Els camps són els indicats:
 <img src="https://i.imgur.com/B8EkREe.png">
 <img src="https://i.imgur.com/FAwaa5B.png">
 
-## ENTRADA COM ALUMNE
-<img src="https://i.imgur.com/OG4RlKu.png">
+## ENTRADA COM ALUMNE - P06
+<img src="https://i.imgur.com/sgjl9fo.png">
 
-## ENTRADA COM A PROFESSOR
-<img src="https://i.imgur.com/kMRLZl4.png">
+## ENTRADA COM A PROFESSOR - P06
+<img src="https://i.imgur.com/aK09Io6.png">
+
+## MOSTRAR INFORMACIO - P06 - NO HO HE ACONSEGUIT
+<img src="https://i.imgur.com/4nF10zL.png">
+<img src="https://i.imgur.com/bsie74J.png">
+<img src="https://i.imgur.com/vrcPIYu.png">
 
 

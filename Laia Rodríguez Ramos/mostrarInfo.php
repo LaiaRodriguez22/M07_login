@@ -31,16 +31,17 @@
                 echo "Actiu: " . $user['active'] . "<br>";
             } else {
                 echo "Usuari no trobat o sense permisos per accedir a aquesta informació.";
+                header('Location: index.php');
             }
         ?>
             <a href="index.php">Tornar</a>
         <?php
         
-        } else {
+        } /*else {
         echo "ID de l'usuari no proporcionat.";
         //TORNEM AL LOGIN
         header('Location: logUser.html');
-        }  
+        }*/  
     ?>
 </body>
 </html>
