@@ -34,48 +34,15 @@
                     $username = $row['username'];
                     $surname = $row['surname'];
                     
-                    //SI ES ALUMNE
-                    if ($rol === 'Alumne') {
 
-                        //SESSIONS?
+                    $_SESSION['LoggedIn'] = true;
+                    $_SESSION['user_id'] = $row['user_id']; 
+                    $_SESSION['username'] = $username;
+                    $_SESSION['rol'] = $rol;
 
-                        echo "Benvingut com a alumne, " . $username . " <br>";
-                        echo "Nom: $username <br>";
-                        echo "Cognom: $surname <br>";
-                        echo "Correu: $email <br>";
-                    } 
-                    //SI ES PROFESSOR
-                    elseif ($rol === 'Professor') {
-                        echo "Benvingut com a professor, " . $username;
-                        $query = "SELECT username, surname FROM userlaia";
-                        $result = mysqli_query($connect, $query);
-
-                        header('Location: index.php');
-
-                        echo "<h2>Llista d'usuaris:</h2>";
-
-                        //UN ALTRE COP, SI HI HA UN USUARI COM A MINIM, GUARDA AL ARRAY
-                        if ($result && mysqli_num_rows($result) > 0) {
-                            $usuaris = array();
-                            
-                            //RECORRER LA BBDD USERSLAIA
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $usuaris[] = $row;
-                            }
-                            
-                            //GUARDA NOM, COGNOM A L'ARRAY PER LLAVORS IMPRIMIR-HO
-                            foreach ($usuaris as $usuari) {
-                                $username = $usuari['username'];
-                                $surname = $usuari['surname'];
-                                echo "Nom i cognom: $username $surname <br>";
-                            }
-                        }
-                    }
-                    //SI NO ES RES DE RES!!
-                    else{
-                        include "logUser.html";
-                        echo "No estas registrat? Regista't ara!";
-                    }
+                    // aqui ja no fem la comprovació de rol, sino que ho 
+                    //fem a index.php
+                    header('Location: index.php');
                 } else {
                     include "logUser.html";
                     echo "Les dades d'inici de sessió són incorrectes.";
