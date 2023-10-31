@@ -14,9 +14,7 @@ session_start();
         <!--Captura de les dades a través de l'acció Post i formulari Login.html-->
         <?php
         $correo = $_POST['email'];
-        $password = $_POST['contrasenya'];
-
-        
+        $password = $_POST['contrasenya'];        
         ?>
 
         <!--Totes les dades de la conexió estan declarats en el fitxer dbConfig -->
@@ -51,6 +49,8 @@ session_start();
                 }
             } catch (Exception $e) {
                 echo 'Se produjo una excepción: ' . $e->getMessage();
+            }finally{
+                mysqli_close($connect);
             }
         } //function
         ?>

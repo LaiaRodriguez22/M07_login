@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,11 @@
 </head>
 <body>
 <?php 
-        if (isset($_GET['user_id'])) {
-            $user_id = $_GET['user_id'];
+        if (isset($_GET["id"])) {
+            $user_id = $_GET['id'];
+
             include "dbConfig.php";
+            echo "estoy en el primer if";
 
             try{
                 $connect = mysqli_connect(DB_HOST, DB_USER, DB_PSW, DB_NAME, DB_PORT);
@@ -21,12 +26,12 @@
                         $users = mysqli_fetch_array($resultat);
 
                         echo "Informació detallada de l'usuari";
-                        echo "Id usuari: " . $user['user_id'] . "<br>";
-                        echo "Nom: " . $user['name'] . "<br>";
-                        echo "Cognom: " . $user['surname'] . "<br>";
-                        echo "Email: " . $user['email'] . "<br>";
-                        echo "Rol: " . $user['rol'] . "<br>";
-                        echo "Actiu: " . $user['active'] . "<br>";
+                        echo "Id usuari: " . $users['user_id'] . "<br>";
+                        echo "Nom: " . $users['name'] . "<br>";
+                        echo "Cognom: " . $users['surname'] . "<br>";
+                        echo "Email: " . $users['email'] . "<br>";
+                        echo "Rol: " . $users['rol'] . "<br>";
+                        echo "Actiu: " . $users['active'] . "<br>";
 
                     } else {
                         include "loginForm.html";
@@ -44,7 +49,9 @@
             <a href="index.php">Tornar</a>
         <?php
         
-        } 
+        } else{
+            echo "trukutru";
+        }
             ?>
 </body>
 </html>
