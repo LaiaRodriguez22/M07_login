@@ -17,7 +17,7 @@
 
                 echo "<h1>Benvingut, " . $_SESSION["username"] . "! Ets un: " . $_SESSION["rol"] . "</h1>";?>
 
-                <a href="mostrarInfo.php?id=<?php echo $_SESSION['user_id']; ?>">Mostrar informacio</a>
+                <a href="mostrarInfo.php?id=<?php echo $_SESSION['user_id'];?>">Mostrar informacio</a>
                 <a href="desconnectar.php">Desconnectar</a>
                 
                 <?php

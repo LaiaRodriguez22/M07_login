@@ -11,14 +11,14 @@
 </head>
 <body>
     <?php
-        if (isset($_GET['user_id'])) {
-            $user_id = $_GET['user_id'];
+        echo "ESTIC A MOSTRAR INFO";
+        if (isset($_GET['id'])) {
+            $user_id = $_GET['id'];
         
             include "dbConf.php";
+
             $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
-
-            $query = "SELECT user_id, username, surname, email, rol, active  FROM userlaia WHERE user_id = $id";
-
+            $query = "SELECT user_id, username, surname, email, rol, active  FROM userlaia WHERE user_id = $user_id";
             $result = mysqli_query($connect, $query);
         
             if ($result && mysqli_num_rows($result) > 0) {
