@@ -28,7 +28,7 @@
                 echo "<b>Cognom:</b> " . $user['surname'] . "<br>";
                 echo "<b>Email:</b> " . $user['email'] . "<br>";
                 echo "<b>Rol:</b> " . $user['rol'] . "<br>";
-                echo "<b>Actiu: </b>" . $user['active'] . "<br>";
+                echo "<b>Actiu: </b>" . $user['active'] . "<br><br>";
             } else {
                 echo "Usuari no trobat o sense permisos per accedir a aquesta informació.";
                 header('Location: index.php');
@@ -37,11 +37,11 @@
             <a href="index.php">Tornar</a>
         <?php
         
-        } /*else {
+        } else {
         echo "ID de l'usuari no proporcionat.";
         //TORNEM AL LOGIN
         header('Location: logUser.html');
-        }*/  
+        }  
     ?>
 </body>
 </html>
