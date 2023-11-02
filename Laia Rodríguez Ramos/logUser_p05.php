@@ -22,23 +22,24 @@
 
             //try catch i finally
             try {
-                $query = "SELECT email, password, rol, username, surname FROM userlaia WHERE email = '$email' AND password = '$password'";
+                $query = "SELECT * FROM userlaia WHERE email = '$email' AND password = '$password'";
                 $result = mysqli_query($connect, $query);
             
                 //SI HI HA UN USUARI COM A MINIM REGISTRAT, ENTRA.
                 if ($result && mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
 
-                    
+                    var_dump($row);
                     $rol = $row['rol'];
                     $username = $row['username'];
                     $surname = $row['surname'];
-                    
+
                     //VARIABLES DE SESSIO    
                     $_SESSION["LoggedIn"] = true;
-                    $_SESSION["user_id"] = $row['user_id']; 
+                    $_SESSION["user_id"] = $row["user_id"]; 
                     $_SESSION["username"] = $username;
                     $_SESSION["rol"] = $rol;
+
                     //ANEM A INDEX.PHP
                     header('Location: index.php');
                 } else {
