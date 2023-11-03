@@ -17,9 +17,9 @@
         if (!isset($_COOKIE[$cookieLang])) {
             echo 'La cookie es la default. CAT.';
             setcookie($cookieLang, $cookieCat);
-        } else {
+        } else if(isset($_COOKIE[$cookieLang])){
             //DEFINIM AQUI LA COOKIE DEL USUARI
-            echo 'La cookie es del usuari' . $cookieLang;
+            echo 'AQUI EN CATALÀ?' . $cookieLang . ' trukutru ' . $cookieEn  ;
         }
 
         //
@@ -33,7 +33,7 @@
                 <a href="idioma.php?idioma=es">ES</a>
                 <a href="idioma.php?idioma=en">EN</a>
                 <a href="delete.php">Eliminar</a>
-
+                <br><br>
                 <a href="mostrarInfo.php?id=<?php echo $_SESSION["user_id"]; ?> ">Mostrar informacio</a>
                 <a href="desconnectar.php">Desconnectar</a>
                 
@@ -71,7 +71,11 @@
                 }
 
                 ?>
-                
+                <a href="idioma.php?idioma=cat">CAT</a>
+                <a href="idioma.php?idioma=es">ES</a>
+                <a href="idioma.php?idioma=en">EN</a>
+                <a href="delete.php">Eliminar</a>
+                <br><br>
                 <a href="mostrarInfo.php?id=<?php echo $_SESSION["user_id"]; ?> ">Mostrar informacio</a>
                 <a href="desconnectar.php">Desconnectar</a>
                 
