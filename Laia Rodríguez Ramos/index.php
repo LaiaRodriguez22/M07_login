@@ -1,5 +1,8 @@
 <?php
     session_start();
+
+    include "dbConf.php";
+    include "idioma.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +14,25 @@
 </head>
 <body>
     <?php
+        if (!isset($_COOKIE[$cookieLang])) {
+            echo 'La cookie es la default. CAT.';
+            setcookie($cookieLang, $cookieCat);
+        } else {
+            //DEFINIM AQUI LA COOKIE DEL USUARI
+            echo 'La cookie es del usuari' . $cookieLang;
+        }
+
+        //
         if (isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] === true) {
             //SI ES ALUMNE
             if ($_SESSION['rol'] === 'Alumne') {
 
                 echo "<h1>Benvingut, " . $_SESSION["username"] . "! Ets un: " . $_SESSION["rol"] . "</h1>";?>
+                
+                <a href="idioma.php?idioma=cat">CAT</a>
+                <a href="idioma.php?idioma=es">ES</a>
+                <a href="idioma.php?idioma=en">EN</a>
+                <a href="delete.php">Eliminar</a>
 
                 <a href="mostrarInfo.php?id=<?php echo $_SESSION["user_id"]; ?> ">Mostrar informacio</a>
                 <a href="desconnectar.php">Desconnectar</a>
@@ -30,8 +47,7 @@
 
                 $query = "SELECT username, surname, email FROM userlaia";
 
-                include "dbConf.php";
-                $connect =  mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
+                $connect = mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
                 $result = mysqli_query($connect, $query);
 
                 echo "<h2>Llista d'usuaris:</h2>";
@@ -68,3 +84,4 @@
     ?>
 </body>
 </html>
+

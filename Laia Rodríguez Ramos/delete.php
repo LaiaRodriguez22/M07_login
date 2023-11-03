@@ -6,6 +6,11 @@
     <title>Delete</title>
 </head>
 <body>
-    
+    <?php
+        include "idioma.php";
+        //Valor buit 
+        setcookie($cookieLang, "", time() - 3600);
+        header('Location: index.php');
+    ?>
 </body>
 </html>

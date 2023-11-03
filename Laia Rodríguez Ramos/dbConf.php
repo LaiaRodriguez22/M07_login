@@ -13,7 +13,6 @@
         define("DB_USER", "root");
         define("DB_PSW", "");
         //NO DEFFENEIXO EL PORT
-        
     ?>
 </body>
 </html>
