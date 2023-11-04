@@ -9,7 +9,10 @@
     <?php
         include "idioma.php";
         //Valor buit 
-        setcookie($cookieLang, "", time() - 3600);
+        if (isset($_COOKIE[$cookieLang])) {
+            setcookie($cookieLang, "", time() - 3600); 
+        } 
+        
         header('Location: index.php');
     ?>
 </body>
