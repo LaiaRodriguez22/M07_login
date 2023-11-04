@@ -35,7 +35,7 @@ Els camps són els indicats:
 ## ENTRADA COM A PROFESSOR - P06
 <img src="https://i.imgur.com/aK09Io6.png">
 
-## MOSTRAR INFORMACIO - P06 - NO HO HE ACONSEGUIT
+## MOSTRAR INFORMACIO - P06 
 <img src="https://i.imgur.com/4nF10zL.png">
 <img src="https://i.imgur.com/bsie74J.png">
 <img src="https://i.imgur.com/vrcPIYu.png">
