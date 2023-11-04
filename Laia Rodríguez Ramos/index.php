@@ -38,13 +38,14 @@
                 if ($_SESSION['rol'] === 'Alumne') {
 
                     echo "<h1>Benvingut, " . $_SESSION["username"] . "! Ets un: " . $_SESSION["rol"] . "</h1>";?>
-  
-                    <a href="idioma.php?idioma=cat">CAT</a>
-                    <a href="idioma.php?idioma=es">ES</a>
-                    <a href="idioma.php?idioma=en">EN</a>
+
+                    <a href="idioma.php?idioma=cat" style="<?php echo (isset($_COOKIE['lang']) && $_COOKIE['lang'] === 'cat') ? 'color: red;' : 'color: blue;'; ?>">CAT</a>
+                    <a href="idioma.php?idioma=es" style="<?php echo (isset($_COOKIE['lang']) && $_COOKIE['lang'] === 'es') ? 'color: red;' : 'color: blue;'; ?>">ES</a>
+                    <a href="idioma.php?idioma=en" style="<?php echo (isset($_COOKIE['lang']) && $_COOKIE['lang'] === 'en') ? 'color: red;' : 'color: blue;'; ?>">EN</a>
 
                     <a href="delete.php">Eliminar</a>
                     <br><br>
+
                     <a href="mostrarInfo.php?id=<?php echo $_SESSION["user_id"]; ?> ">Mostrar informacio</a>
                     <a href="desconnectar.php">Desconnectar</a>
                     
@@ -192,7 +193,7 @@
                     <a href="delete.php">Eliminar</a>
                     <br><br>
                     <a href="mostrarInfo.php?id=<?php echo $_SESSION["user_id"]; ?> ">Mostrar información</a>
-                    <a href="desconnectar.php">Desconectar</a>
+                    <a href="desconnectar.php">Desconectarse</a>
                     
                     <?php
 
@@ -232,7 +233,7 @@
                             $username = $usuari['username'];
                             $surname = $usuari['surname'];
                             $email = $usuari['email'];
-                            echo "Nombre i apellidos: $username $surname <br> Correo: $email <br><br>";
+                            echo "Nombre y apellido: $username $surname <br> Correo: $email <br><br>";
                         }
                     }
 
@@ -285,7 +286,7 @@
                     $connect = mysqli_connect(DB_HOST,DB_USER,DB_PSW,DB_NAME);
                     $result = mysqli_query($connect, $query);
 
-                    echo "<h2>Llista d'usuaris:</h2>";
+                    echo "<h2>Table of users:</h2>";
 
                     //UN ALTRE COP, SI HI HA UN USUARI COM A MINIM, GUARDA AL ARRAY
                     if ($result && mysqli_num_rows($result) > 0) {
