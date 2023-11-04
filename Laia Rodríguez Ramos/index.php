@@ -54,12 +54,14 @@
                 //SI ES PROFESSOR
                 elseif ($_SESSION['rol'] === 'Professor') {
 
-                    echo "<h1>Benvingut, " . $_SESSION["username"] . "! Ets un: " . $_SESSION["rol"] . "</h1>";?>
-
-                    <a href="idioma.php?idioma=cat" style="<?php echo ($_COOKIE['lang'] === 'cat') ? ' color: red;' : ' color: blue;'; ?>">CAT</a>
-                    <a href="idioma.php?idioma=es" style="<?php echo ($_COOKIE['lang'] === 'es') ? ' color: red;' : ' color: blue;'; ?>">ES</a>
-                    <a href="idioma.php?idioma=en" style="<?php echo ($_COOKIE['lang'] === 'en') ? ' color: red;' : ' color: blue;'; ?>">EN</a>
+                    echo "<h1>Benvingut, " . $_SESSION["username"] . "! Ets un: " . $_SESSION["rol"] . "</h1>";
                     
+                    ?>
+
+                    <a href="idioma.php?idioma=cat" style="<?php echo (isset($_COOKIE['lang']) && $_COOKIE['lang'] === 'cat') ? 'color: red;' : 'color: blue;'; ?>">CAT</a>
+                    <a href="idioma.php?idioma=es" style="<?php echo (isset($_COOKIE['lang']) && $_COOKIE['lang'] === 'es') ? 'color: red;' : 'color: blue;'; ?>">ES</a>
+                    <a href="idioma.php?idioma=en" style="<?php echo (isset($_COOKIE['lang']) && $_COOKIE['lang'] === 'en') ? 'color: red;' : 'color: blue;'; ?>">EN</a>
+
                     <a href="delete.php">Eliminar</a>
                     <br><br>
 
