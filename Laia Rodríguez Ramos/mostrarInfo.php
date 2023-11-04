@@ -21,13 +21,13 @@
             cookieShowInfoDefault();
         } else if(isset($_COOKIE[$cookieLang])){
             if($_COOKIE[$cookieLang] == "es"){
-                cookieValueEs();
+                cookieShowInfoEs();
             }
             else if($_COOKIE[$cookieLang] == "cat"){
-                cookieValueCat();
+                cookieShowInfoCat();
             }
             else if($_COOKIE[$cookieLang] == "en"){
-                cookieValueEn();
+                cookieShowInfoEn();
             }
         }
 
