@@ -14,17 +14,20 @@
         $cookieEs = "es";
         $cookieEn = "en";
 
+        //DEU MINUTS PERQUE CADUQUI LA COOKIE
+        $tempsDuracio = time() + 600;
+
         if (isset($_GET['idioma'])) {
             $idioma = $_GET['idioma'];
-        
+
             if ($idioma == $cookieCat) {
-                setcookie($cookieLang, $cookieCat); 
+                setcookie($cookieLang, $cookieCat, $tempsDuracio); 
             } 
             elseif ($idioma == $cookieEs) {
-                setcookie($cookieLang, $cookieEs); 
+                setcookie($cookieLang, $cookieEs, $tempsDuracio); 
             } 
             elseif ($idioma == $cookieEn) {
-                setcookie($cookieLang, $cookieEn); 
+                setcookie($cookieLang, $cookieEn, $tempsDuracio); 
             }
             // TORNA AL INDEX.PHP
             header('Location: index.php');
