@@ -133,19 +133,19 @@
         
                 if ($result && mysqli_num_rows($result) > 0) {
                     $user = mysqli_fetch_assoc($result);
-                    echo "<h1>Informació detallada de l'usuari:</h1><br>";
+                    echo "<h1>Detailed user information:</h1><br>";
                     echo "<b>Name:</b> " . $user['username'] . "<br>";
                     echo "<b>Surname:</b> " . $user['surname'] . "<br>";
                     echo "<b>Email:</b> " . $user['email'] . "<br>";
                     echo "<b>Rol:</b> " . $user['rol'] . "<br>";
                     echo "<b>Active: </b>" . $user['active'] . "<br><br>";
                 } else {
-                    echo "Usuari no trobat o sense permisos per accedir a aquesta informació.";
+                    echo "User not found or lacking permissions to access this information.";
                     header('Location: index.php');
                 }
                 echo '<a href="index.php">Return</a>';
             } else {
-                echo "ID de l'usuari no proporcionat.";
+                echo "User ID not provided.";
                 // TORNEM AL LOGIN
                 header('Location: logUser.html');
             }
