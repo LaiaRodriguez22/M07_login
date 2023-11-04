@@ -41,4 +41,28 @@ Els camps són els indicats:
 <img src="https://i.imgur.com/vrcPIYu.png">
 <img src="https://i.imgur.com/esf9Rz4.png">
 
+# COOKIES P07
+
+## SENSE COOKIE ESCOLLIDA
+
+<img src="https://i.imgur.com/s88t4xi.png">
+<img src="https://i.imgur.com/T51wMyw.png">
+
+
+## CATALÀ
+
+<img src="https://i.imgur.com/El7tBMS.png">
+<img src="https://i.imgur.com/TjJhUXi.png">
+
+
+## CASTELLÀ
+
+<img src="https://i.imgur.com/KsmWC47.png">
+<img src="https://i.imgur.com/ww7Er7U.png">
+
+
+## INGLÉS
+
+<img src="https://i.imgur.com/cwOiCSu.png">
+<img src="https://i.imgur.com/tCgImdD.png">
 
