@@ -1,4 +1,5 @@
 
+<!-- Les constants de les variables de la base de dades, per utilitzar-les s'ha de fer un include -->
 <?php
     define("DB_HOST", "localhost");
     define("DB_NAME", "users");
