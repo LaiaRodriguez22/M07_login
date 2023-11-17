@@ -43,7 +43,7 @@
                     echo "La habitació ". $hab ." de la planta " . $planta . " està plena.<br>";
                 }
                 else{
-                    echo "La habitació ". $hab . " de la planta " . $planta ." té ". $hotel[$planta][$hab] . " comensals.<br>";
+                    echo "La habitació ". $hab . " de la planta " . $planta ." té ". $hotel[$planta][$hab] . " persones.<br>";
                 }
             }
         }
