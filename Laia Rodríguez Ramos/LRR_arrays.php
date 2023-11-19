@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Laia Rodríguez Ramos</title>
 </head>
 <body>
     <?php
-        echo "<h1>RESTAURANT</h1>";
+
+        /*----EXERCICI 1----*/
+        echo "<h1 style='margin:auto;text-align:center;'>RESTAURANT</h1>";
+
+    ?>
+        <div style="width:225px;padding:15px;margin:auto;border:1px dotted red;">
+    <?php
 
         $taulesRestaurant = array();
         
@@ -24,8 +30,18 @@
                 echo "La taula ". $taula ." té ". $taulesRestaurant[$taula] . " comensals.<br>";
             }
         }
+    ?>
 
-        echo "<h1>HOTEL</h1>";
+        </div>
+        <br>
+    <?php
+
+        /*----EXERCICI 2----*/
+        echo "<h1 style='margin:auto;text-align:center;'>HOTEL</h1>";
+
+    ?>
+        <div style="width:350px;padding:15px;margin:auto;border:1px dotted purple;">
+    <?php
 
         $hotel = array();
 
@@ -48,9 +64,9 @@
             }
         }
 
-
-
-
+    ?>
+        </div>
+    <?php
 
     ?>
 </body>
